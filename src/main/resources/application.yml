@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+      - name: CustomFilter
+      routes:      
+      - id: path_route1 
+        uri: "http://localhost:8081"     
+        predicates:         
+         - Path=/addAppliance/**,/getAppliances/**,/authenticate            
+        
+        
+      - id: path_route2
+        uri: "http://localhost:8082"      
+        predicates:         
+         - Path=/callService2/**
+        
+        
+            
+
+        
+      
+    
